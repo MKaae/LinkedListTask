@@ -25,7 +25,7 @@ class LinkedList{
             payload.prev = this.tail;
             this.tail = payload;
         }
-        payload.next = null; // Ensure the added payload becomes the new tail
+        payload.next = null; 
     }
     addLast(payload) {
         if(!this.head) {
@@ -36,7 +36,7 @@ class LinkedList{
             payload.prev = this.tail;
             this.tail = payload;
         }
-        payload.next = null; // Ensure the added payload becomes the new tail
+        payload.next = null; 
     }
 
     addFirst(payload){
