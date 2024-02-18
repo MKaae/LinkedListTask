@@ -193,9 +193,25 @@ class LinkedList{
         }
     }
     swapNodes(nodeA, nodeB){
-        const dataA = nodeA.data;
-        nodeA.data = nodeB.data;
-        nodeB.data = dataA;
+        let nodeACheck = false;
+        let nodeBCheck = false;
+        let currentNode = this.head;
+        while(currentNode){
+            if(currentNode === nodeA){
+                nodeACheck = true;
+            }
+            if(currentNode === nodeB){
+                nodeBCheck = true;
+            }
+            currentNode = currentNode.next;
+        }
+        if(nodeACheck && nodeBCheck){
+            const dataA = nodeA.data;
+            nodeA.data = nodeB.data;
+            nodeB.data = dataA;
+            return;
+        }
+        console.log("Couldn't find both nodes.")
     }
     clear(){
         let currentNode = this.head;
@@ -332,10 +348,80 @@ const node5 = {
 
 
 const linkedlist = new LinkedList();
+// linkedlist.clear();
 linkedlist.add(node1);
 linkedlist.addLast(node2);
 linkedlist.addFirst(node4);
 linkedlist.dumpList();
 console.log("*************************************")
-linkedlist.insertBefore(1, node5);
-linkedlist.dumpList();
+// linkedlist.removeFirst();
+// linkedlist.dumpList();
+// linkedlist.removeLast();
+// linkedlist.dumpList();
+// linkedlist.removeNode(node1);
+// linkedlist.dumpList();
+// linkedlist.removeNode(node2);
+// linkedlist.dumpList();
+// linkedlist.removeNode(node4);
+// linkedlist.dumpList();
+// linkedlist.clear();
+// linkedlist.removeFirst();
+// linkedlist.clear();
+// linkedlist.removeLast);
+// linkedlist.clear();
+// linkedlist.removeNode(node1);
+// linkedlist.insertAfterNode(node1);
+// linkedlist.dumpList();
+// linkedlist.insertAfterNode(node2);
+// linkedlist.dumpList();
+// linkedlist.insertAfterNode(node4);
+// linkedlist.dumpList();
+// linkedlist.clear();
+// linkedlist.insertAfterNode(node1);
+// linkedlist.insertBeforeNode(node1);
+// linkedlist.dumpList();
+// linkedlist.insertBeforeNode(node2);
+// linkedlist.dumpList();
+// linkedlist.insertBeforeNode(node4);
+// linkedlist.dumpList();
+// linkedlist.clear();
+// linkedlist.insertBeforeNode(node1);
+// console.log(linkedlist.indexOf(node1));
+// console.log(linkedlist.indexOf(node2));
+// console.log(linkedlist.indexOf(node4));
+// console.log(linkedlist.indexOf(node5));
+// linkedlist.swapNodes(node1, node4);
+// linkedlist.dumpList();
+// linkedlist.swapNodes(node1, node5);
+// console.log(linkedlist.get(0));
+// console.log(linkedlist.get(1));
+// console.log(linkedlist.get(2));
+// linkedlist.clear();
+// console.log(linkedlist.get(0));
+// linkedlist.insertBefore(1, node5);
+// linkedlist.dumpList();
+// linkedlist.insertBefore(2, node5);
+// linkedlist.dumpList();
+// linkedlist.insertBefore(4, node5);
+// linkedlist.dumpList();
+// linkedlist.clear();
+// linkedlist.insertBefore(2, node5);
+// linkedlist.insertAfter(1, node5);
+// linkedlist.dumpList();
+// linkedlist.insertAfter(2, node5);
+// linkedlist.dumpList();
+// linkedlist.insertAfter(4, node5);
+// linkedlist.dumpList();
+// linkedlist.clear();
+// linkedlist.insertAfter(2, node5);
+// linkedlist.remove(0);
+// linkedlist.remove(1);
+// linkedlist.remove(2);
+// linkedlist.clear();
+// linkedlist.remove(0);
+// linkedlist.first();
+// linkedlist.clear();
+// linkedlist.first();
+// linkedlist.last();
+// linkedlist.clear();
+// linkedlist.last();
